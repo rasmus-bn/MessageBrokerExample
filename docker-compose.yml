@@ -1,0 +1,28 @@
+version: '3.7'
+services: 
+    rabbitmq:
+        # volumes:
+            # - './rabbitmq/rabbitmq-home:/var/lib/rabbitmq'
+            # - './rabbitmq/rabbitmq-config:/etc/rabbitmq/'
+            # - './rabbitmq/rabbitmq-db:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit'
+        build: ./rabbitmq
+        # expose:
+        #   - "5672"
+        ports:
+            - 15672:15672
+            - 5672:5672
+
+    alice-service:
+        volumes:
+            - ./alice-service:/home/node/app
+        build: ./alice-service
+
+    bob-service:
+        volumes:
+            - ./bob-service:/home/node/app
+        build: ./bob-service
+
+    john-service:
+        volumes:
+            - ./john-service:/home/node/app
+        build: ./john-service
