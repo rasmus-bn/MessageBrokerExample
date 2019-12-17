@@ -9,9 +9,9 @@ They only need to subscribe to queues and publish messages to RabbitMQ.
 
 In order to run the code go to the root folder and run cmd:
 
-
+  
   docker-compose up
-
+  
 
 This should spin up the 3 services and a docker container with RabbitMQ.
 The service responses are written in the terminal.
